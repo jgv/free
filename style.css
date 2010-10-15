@@ -1,0 +1,85 @@
+/*
+Theme Name: Free
+Theme URI: http://www.newmuseum.org/free
+Description: Theme for 'Free' at the New Museum of Contemporary Art
+Author: Jonathan Vingiano
+Version: 1.0
+Tags: free, new museum, contemporary art, catalog
+*/
+
+
+@import url("stylesheets/reset.css");
+
+html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #333333; background-color: #e8e8e8;  }
+
+#wrapper { width: 100%; background-color: #e8e8e8}
+
+#container { position: absolute; left: 50%; top: 0px; margin-left: -500px; padding-top: 40px; }
+
+#nav { position: fixed; left: 50%; margin-left: -540px; top: 40%; margin-top: -150px; width: 300px; }
+
+#nav ul { list-style-type: none; padding-left: 0px; margin-left: 0px; float: right; }
+
+#nav ul li { text-align: right; font-size: 72px; color: #454545; line-height: 80px }
+
+#social { width: 100px; }
+
+a, a:visited { text-decoration: none; color: #333; }
+
+a:hover { text-decoration: none; color: #F00;}
+
+h1 { font-size: 72px; color: #454545; display: block; margin: 0 auto; }
+
+h1.section-title { height: 130px; }
+
+h1.section-title:after { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
+
+h2 { font-size: 24px; color: #454545; }
+
+h3 { font-size: 14px; text-transform: uppercase; }
+
+h4 { font-size: 13px; color: #f00;}
+
+.section-wrap { width: 648px; background-color: white; box-shadow: 0 0 1em #888; -moz-box-shadow: 0 0 1em #888; -webkit-box-shadow: 0 0 1em #888; filter:progid:DXImageTransform.Microsoft.Blur(pixelradius=10); -ms-filter:"progid:DXImageTransform.Microsoft.Blur(pixelradius=10)"; left: 50%; margin: 20px 0 20px 320px ; padding: 4px; }
+
+.section { width: 496px; border: 1px solid #d4d4d4; padding: 10px 75px 10px; background-color: white; }
+   .section h1, h2, h3 { text-align: center; }
+   .section p { color: #333333; font-size: 14px; line-height: 18px}
+
+
+   .essay-meta { min-height: 275px; cursor: pointer!important;}
+      .essay-meta h2 { padding-top: 100px}
+      .essay-meta h3 { padding-top: 10px }
+
+.section-artists { width: 646px; border: 1px solid #d4d4d4; background-color: white; }
+   .section-artists h2 { text-align: center; height: 60px; vertical-align: middle;  padding: 20px 0 0 0; }
+   .section-artists h3 { text-align: center; padding: 0 0 20px 0;}
+
+   .meta-wrapper { cursor: pointer!important; }
+   
+   
+
+
+.ital { font-style: italic; }
+
+.right { float: right; }
+
+.left { float: left; }
+
+.clear { clear:both; }
+
+.clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+
+.clearfix, .container {display:block;}
+
+#blog ul { width: 240px; margin: 0px auto; display: block; list-style-type: none; }
+
+#blog ul li { display: inline; width: 40px; padding: 0 4px; font-size: 14px; text-transform: uppercase; color: #f00;}
+
+#blog ul li.blog-ul-separator { color: #333 }
+
+#artists table { width: 100%!important; margin: 0 auto; display: block; }
+
+#artists td { margin: 0 6px; }
+
+#artists table, tr, td { text-align: center; font-size: 14px; color: #cc0000; font-style: italic; }
