@@ -17,7 +17,7 @@
          <?php endwhile;
       rewind_posts();
       
-      include('inc/artist-header.html');
+      include('inc/artists.html');
 
       query_posts('category_name=artists'); ?>
          <div id="artist-accordion">

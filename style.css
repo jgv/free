@@ -14,7 +14,7 @@ html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #333333
 
 #wrapper { width: 100%; background-color: #e8e8e8}
 
-#container { position: absolute; left: 50%; top: 0px; margin-left: -500px; padding-top: 40px; }
+#container { position: absolute; left: 50%; top: 0px; margin-left: -500px; }
 
 #nav { position: fixed; left: 50%; margin-left: -540px; top: 40%; margin-top: -150px; width: 300px; }
 
