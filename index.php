@@ -40,11 +40,11 @@
          </div>
      <?php rewind_posts();
 
-	include('inc/essays.html');
+	include('inc/essays.php');
 
       query_posts('category_name=essays');
          while (have_posts()) : the_post();  ?>
-            <div class="section-wrap">
+            <div class="section-wrap essays">
                <div class="section">
                <div class="essay-meta">
                <h2 class="ital"><?php the_title(); ?></h2>
@@ -58,12 +58,20 @@
          <?php endwhile;
       rewind_posts(); 
 
-	  include('inc/events.html');
+	  include('inc/events.php');
 
       query_posts('category_name=events');
          while (have_posts()) : the_post();  ?>
-            <div class="section-wrap" id>
+            <div class="section-wrap events">
                <div class="section">
+               <h2 class="ital"><?php the_title(); ?></h2>
+               <h5>
+               <?php echo get_post_meta( $post->ID, 'event_date', true ); ?>
+               &ndash;
+               <?php echo get_post_meta( $post->ID, 'event_time', true ); ?>
+               &ndash;
+               <?php echo get_post_meta( $post->ID, 'event_location', true ); ?>
+               </h5>               
                <?php the_content(); ?>
                </div>
             </div>

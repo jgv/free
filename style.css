@@ -32,13 +32,15 @@ h1 { font-size: 72px; color: #454545; display: block; margin: 0 auto; }
 
 h1.section-title { height: 130px; }
 
-h1.section-title:after { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
+h1.section-title:after, /* ul#events-list:after */ { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
 
-h2 { font-size: 24px; color: #454545; }
+h2 { font-size: 24px; color: #454545; font-weight: lighter; }
 
 h3 { font-size: 14px; text-transform: uppercase; }
 
 h4 { font-size: 13px; color: #f00;}
+
+h5 { font-size: 16px; color: gray; text-align: center; margin: 20px auto; font-weight: lighter; font-weight: 200; }
 
 .section-wrap { width: 648px; background-color: white; box-shadow: 0 0 1em #888; -moz-box-shadow: 0 0 1em #888; -webkit-box-shadow: 0 0 1em #888; filter:progid:DXImageTransform.Microsoft.Blur(pixelradius=10); -ms-filter:"progid:DXImageTransform.Microsoft.Blur(pixelradius=10)"; left: 50%; margin: 20px 0 20px 320px ; padding: 4px; }
 
@@ -57,8 +59,25 @@ h4 { font-size: 13px; color: #f00;}
 
    .meta-wrapper { cursor: pointer!important; }
    
-   
+ul#events-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0; text-align: center;  }   
 
+ul#events-list li { vertical-align: middle }
+
+ul#events-list li h4 { width: auto; display: inline;}
+
+div.events h5 { margin-bottom: 60px; }
+
+div.events h5:after { content:url(images/divider.png); margin: 20px auto 20px; display: block; position: absolute; left: 34% }
+
+h3#essays-list-title { margin-top: 20px}
+
+ul#authors-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0 0; text-align: center;  }   
+
+ul#authors-list li { display: inline; padding: 0 4px; }
+
+ul#authors-list:after { content:url(images/divider.png); margin: 10px auto; display: block; position: absolute; left: 34% }
+
+ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 
 .ital { font-style: italic; }
 
