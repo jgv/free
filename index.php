@@ -17,7 +17,7 @@
          <?php endwhile;
       rewind_posts();
       
-      include('inc/artists.html');
+      include('inc/artists.php');
 
       query_posts('category_name=artists'); ?>
         <?php while (have_posts()) : the_post();  ?>
@@ -32,6 +32,18 @@
                   </div>
                <div class="artists-content">
                   <?php the_content(); ?>
+                  <?php/* $title = strtolower(get_the_title()); ?>
+                  <?php $query = "category_name=blog&tag={$title}"; ?>
+                  <?php $artists_query = query_posts($query); ?>
+                  <?php while ($artists_query->have_posts()) : $artists_query->the_post();  ?>                 
+                  <?php the_title();?>
+                  <?php endwhile; ?>
+                  <?php /* foreach ($posts as $related){
+                    echo $related;
+                    echo $related->name;
+                    print_r($related);
+                    }
+                  */?>
                </div>
                </div>
             </div>
@@ -91,7 +103,7 @@
                <ul id="tag-list">
                <?php
                $last_tag = end(get_tags());
-               $artists = array('joel holmberg','seth price', 'Liz Deschenes','Andrea Longacre-White','Trevor Paglen','Aleksandra Domanovic','Kristin Lucas','Lizzie Fitch','Jill Magid','Jon Rafman','Martijn Hendriks','Hanne Mugaas','Clunie Reid','Takeshi Murata','Amanda Ross-Ho','David Horvitz','Rashaad Newsome','Alexandre Singh','Lars Laumann','Lisa Oppenheim','Ryan Trecartin & David Karp','Ryan Trecartin and David Karp','Ryan Trecartin','David Karp','Harm Van Den Dorpel');
+               $artists = strtolower(array('joel holmberg','seth price', 'Liz Deschenes','Andrea Longacre-White','Trevor Paglen','Aleksandra Domanovic','Kristin Lucas','Lizzie Fitch','Jill Magid','Jon Rafman','Martijn Hendriks','Hanne Mugaas','Clunie Reid','Takeshi Murata','Amanda Ross-Ho','David Horvitz','Rashaad Newsome','Alexandre Singh','Lars Laumann','Lisa Oppenheim','Ryan Trecartin & David Karp','Ryan Trecartin and David Karp','Ryan Trecartin','David Karp','Harm Van Den Dorpel'));
                foreach(get_tags() as $tag){     
                if (!in_array($tag->name, $artists)){
                if ($tag == $last_tag) { 
