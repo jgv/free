@@ -21,7 +21,6 @@
 
       query_posts('category_name=artists'); ?>
         <?php while (have_posts()) : the_post();  ?>
-         <?php $artist_cat = end(get_the_category($post->ID)); ?>
             <div class="section-wrap" id="artists-container">
                <div class="section-artists" id="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
                   <div class="meta-wrapper">
@@ -33,7 +32,6 @@
                   </div>
                <div class="artists-content">
                   <?php the_content(); ?>
-                  <?php the_meta(); ?>
                </div>
                </div>
             </div>
@@ -93,31 +91,7 @@
                <ul id="tag-list">
                <?php
                $last_tag = end(get_tags());
-               $artists = array('joel holmberg',
-                                'seth price', 
-                                'Liz Deschenes',
-                                'Andrea Longacre-White',
-                                'Trevor Paglen',
-                                'Aleksandra Domanovic',
-                                'Kristin Lucas',
-                                'Lizzie Fitch',
-                                'Jill Magid',
-                                'Jon Rafman',
-                                'Martijn Hendriks'
-                                'Hanne Mugaas',
-                                'Clunie Reid',
-                                'Takeshi Murata',
-                                'Amanda Ross-Ho',
-                                'David Horvitz',
-                                'Rashaad Newsome',
-                                'Alexandre Singh',
-                                'Lars Laumann',
-                                'Lisa Oppenheim',
-                                'Ryan Trecartin & David Karp'
-                                'Ryan Trecartin and David Karp',
-                                'Ryan Trecartin',
-                                'David Karp',
-                                'Harm Van Den Dorpel');
+               $artists = array('joel holmberg','seth price', 'Liz Deschenes','Andrea Longacre-White','Trevor Paglen','Aleksandra Domanovic','Kristin Lucas','Lizzie Fitch','Jill Magid','Jon Rafman','Martijn Hendriks','Hanne Mugaas','Clunie Reid','Takeshi Murata','Amanda Ross-Ho','David Horvitz','Rashaad Newsome','Alexandre Singh','Lars Laumann','Lisa Oppenheim','Ryan Trecartin & David Karp','Ryan Trecartin and David Karp','Ryan Trecartin','David Karp','Harm Van Den Dorpel');
                foreach(get_tags() as $tag){     
                if (!in_array($tag->name, $artists)){
                if ($tag == $last_tag) { 
