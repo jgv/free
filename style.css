@@ -36,6 +36,18 @@ a.closer { color: #f00; padding-top: 15px; }
 
 a:hover { text-decoration: none; color: #F00;}
 
+.ital { font-style: italic; }
+
+.right { float: right; }
+
+.left { float: left; }
+
+.clear { clear:both; }
+
+.clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+
+.clearfix, .container {display:block;}
+
 h1 { font-size: 72px; color: #454545; display: block; margin: 0 auto; }
 
 h1.section-title { height: 130px; }
@@ -88,18 +100,6 @@ ul#authors-list li { display: inline; padding: 0 4px; }
 ul#authors-list:after { content:url(images/divider.png); margin: 10px auto; display: block; position: absolute; left: 34% }
 
 ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
-
-.ital { font-style: italic; }
-
-.right { float: right; }
-
-.left { float: left; }
-
-.clear { clear:both; }
-
-.clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
-
-.clearfix, .container {display:block;}
 
 #blog ul { width: 240px; margin: 0px auto; display: block; list-style-type: none; }
 

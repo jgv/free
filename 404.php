@@ -1,1 +1,1 @@
-<?php header('location: http://www.newmuseum.org/free'); ?>
+<?php header('Location:'. bloginfo("url") .'');  ?>
