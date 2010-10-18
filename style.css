@@ -119,4 +119,6 @@ div.blog img { margin: 20px auto;}
 
 #artists td { margin: 0 6px; }
 
+#artists td a { color: #cc0000; }
+
 #artists table, tr, td { text-align: center; font-size: 14px; color: #cc0000; font-style: italic; }

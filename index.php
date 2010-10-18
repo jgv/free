@@ -20,10 +20,9 @@
       include('inc/artists.html');
 
       query_posts('category_name=artists'); ?>
-         <div id="artist-accordion">
         <?php while (have_posts()) : the_post();  ?>
             <div class="section-wrap" id="artists-container">
-               <div class="section-artists">
+               <div class="section-artists" id="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
                   <div class="meta-wrapper">
                   <?php the_post_thumbnail(); ?>
                   <div class="meta">
@@ -37,7 +36,6 @@
                </div>
             </div>
          <?php endwhile; ?>
-         </div>
      <?php rewind_posts();
 
 	include('inc/essays.php');
