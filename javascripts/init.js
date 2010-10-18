@@ -6,8 +6,9 @@ $(document).ready(function() {
 
 	$.localScroll({ offset: {top:-20}}); //scrollto
 
-	$('.meta-wrapper').click(function() { // artists accordion
+	$(' div.meta-wrapper').click(function() { // artists accordion
 		$(this).next().toggle('slow');
+		$.scrollTo('div.artists-content', 1500, {offset:-50});
 		return false;
 	}).next().hide();
 	
@@ -38,7 +39,5 @@ $(document).ready(function() {
 		$(this).parent().slideUp(1000);
 		$.scrollTo('#essays', 1500);
 	});
-
-
 
 });
