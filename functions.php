@@ -5,7 +5,9 @@ add_theme_support( 'post-thumbnails' ); // enables featured photos for artists s
 
 function jgv_list_authors($args = '') {
 	global $wpdb;
-
+        
+        $artist_list = array('Ed Halter', 'Caterina Fake', 'Joanne McNeil', 'Brian Droitcour', 'Lauren Cornell', 'Ceci Moss');
+        
 	$defaults = array(
 		'optioncount' => false, 'exclude_admin' => true,
 		'show_fullname' => false, 'hide_empty' => true,
@@ -34,7 +36,7 @@ function jgv_list_authors($args = '') {
 		$author_count[$row->post_author] = $row->count;
 
 	foreach ( (array) $authors as $author ) {
-
+         
 		$link = '';
 
 		$author = get_userdata( $author->ID );
@@ -43,7 +45,6 @@ function jgv_list_authors($args = '') {
 
 		if ( $show_fullname && ($author->first_name != '' && $author->last_name != '') )
 			$name = "$author->first_name $author->last_name";
-
 		if( !$html ) {
 			if ( $posts == 0 ) {
 				if ( ! $hide_empty )
@@ -102,7 +103,7 @@ function jgv_list_authors($args = '') {
 		if ( $posts || ! $hide_empty )
 			$return .= $link . ( ( 'list' == $style ) ? '</li>' : ', ' );
 	}
-
+    
 	$return = trim($return, ', ');
 
 	if ( ! $echo )
