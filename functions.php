@@ -61,7 +61,7 @@ function jgv_list_authors($args = '') {
 			if ( ! $hide_empty )
 				$link = $name;
 		} else {
-			$link = '<a href="#' . $author->user_nicename . '" title="' . esc_attr( sprintf(__("Posts by %s"), $author->display_name) ) . '">' . $name . '</a>';
+			$link = '<a href="#' . $author->last_name . '" title="' . esc_attr( sprintf(__("Posts by %s"), $author->display_name) ) . '">' . $name . '</a>';
 /*
  this needs to be moved to a custom function in functions.php!!!!!!
 
