@@ -101,11 +101,15 @@ ul#authors-list:after { content:url(images/divider.png); margin: 10px auto; disp
 
 ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 
-#blog ul { width: 240px; margin: 0px auto; display: block; list-style-type: none; }
+ul#blog-list { width: 175px; margin: 0px auto; display: block; list-style-type: none; }
 
-#blog ul li { display: inline; width: 40px; padding: 0 4px; font-size: 14px; text-transform: uppercase; color: #f00;}
+ul#blog-list li { display: inline; width: 40px; padding: 0 4px; font-size: 14px; text-transform: uppercase;}
 
-#blog ul li.blog-ul-separator { color: #333 }
+ul#blog-list li a { color: #f00 }
+
+ul#blog-list li a:hover { color: #454545  } 
+
+ul#blog-list li.blog-ul-separator { color: #333 }
 
 h3#tags { padding-top: 20px; }
 
@@ -116,6 +120,10 @@ ul#tag-list ul { list-style-type: none; }
 ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a1; }
 
 div.blog img { margin: 20px auto;}
+
+ul#artists-list { list-style-type:none }
+
+ul#artists-list li { display: inline; }
 
 #artists table { width: 100%!important; margin: 0 auto; display: block; }
 
