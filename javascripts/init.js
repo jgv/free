@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	$('.essay-meta').click(function() { // essays accordion
 		$(this).next().toggle('fast');
-		$.scrollTo('div.essay-content', 1500, {offset:-50});
+	    $.scrollTo($(this).next(), 1500, {offset:-50});
 		return false;
 	}).next().hide();
 
