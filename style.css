@@ -10,19 +10,25 @@ Tags: free, new museum, contemporary art, catalog
 
 @import url("stylesheets/reset.css");
 
-html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #333333; background-color: #e8e8e8;  }
+html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #333333; background-color: #e8e8e8; }
+
+p { line-height: 22px!important; font-weight: lighter;}
 
 #wrapper { width: 100%; background-color: #e8e8e8}
 
 #container { position: absolute; left: 50%; top: 0px; margin-left: -500px; }
 
-#nav { position: fixed; left: 50%; margin-left: -540px; top: 40%; margin-top: -150px; width: 300px; }
+#nav { position: fixed; left: 50%; margin-left: -440px; top: 40%; margin-top: -150px; width: 200px; }
 
-#nav ul { list-style-type: none; padding-left: 0px; margin-left: 0px; float: right; }
+ul#nav-list { list-style-type: none; padding-left: 0px; margin: 0 0 40px 0; float: right; }
 
-#nav ul li { text-align: right; font-size: 72px; color: #454545; line-height: 80px }
+ul#nav-list li { text-align: right; font-size: 72px; color: #454545; line-height: 82px }
 
-#social { width: 100px; }
+#nav p { text-transform: uppercase; color: #f00; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; text-align: right;}
+
+ul#social { list-style-type: none; margin: 15px 0 0 0; width:300px}
+
+ul#social li { display: inline; width:55px!important; }
 
 a, a:visited { text-decoration: none; color: #333; }
 
@@ -97,9 +103,15 @@ ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 
 #blog ul li.blog-ul-separator { color: #333 }
 
+h3#tags { padding-top: 20px; }
+
+h3#tags:before { content:url(images/divider.png); margin: -10px auto 50px; display: block; position: absolute; left: 34% }
+
 ul#tag-list ul { list-style-type: none; }
 
 ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a1; }
+
+div.blog img { margin: 20px auto;}
 
 #artists table { width: 100%!important; margin: 0 auto; display: block; }
 

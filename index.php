@@ -82,12 +82,14 @@
 
       query_posts('category_name=blog');
          while (have_posts()) : the_post();  ?>
-            <div class="section-wrap" id>
-               <div class="section">
-               <?php the_title(); ?>
+            <div class="section-wrap">
+               <div class="section blog">
+               <a href="<?php the_permalink(); ?>">
+               <?php the_title('<h2 class="ital">', '</h2>'); ?>
+			   </a>
                <?php the_post_thumbnail(); ?>
                <?php the_content(); ?>
-               <?php bloginfo('url') .'/#'. strtolower(str_replace(' ','', trim(get_the_title($post)))); /* the permalink */ ?> 
+               <?php echo bloginfo('url') .'/#'. strtolower(str_replace(' ','', trim(get_the_title($post)))); /* the permalink */ ?> 
                <h3 id="tags">Tags</h3>
                <ul id="tag-list">
                <?php
