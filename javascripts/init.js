@@ -7,37 +7,37 @@ $(document).ready(function() {
 	$.localScroll({ offset: {top:-20}}); //scrollto
 
 	$(' div.meta-wrapper').click(function() { // artists accordion
-		$(this).next().toggle('slow');
+	    $(this).next().toggle('slow');
 	    $.scrollTo($(this).next(), 1500, {offset:-50});
-		return false;
+	    return false;
 	}).next().hide();
 	
 	$('.meta-wrapper img').hover(function() {  // begin hover stuff for artists accordion
-	  $(this).next().fadeIn('slow').css('color', '#f00');
+	    $(this).next().fadeIn('slow').css('color', '#f00');
 	
 	},
 	  function() {
- 	  $(this).next().fadeIn('slow').css('color', '#454545');  	
+ 	      $(this).next().fadeIn('slow').css('color', '#454545');  	
 	}); // end hover stuff for artists accordion
 
 	$('.essay-meta').hover(function() { // essays hover
-		$('h3', this).fadeIn('slow').css('color', '#f00');
+	    $('h3', this).fadeIn('slow').css('color', '#f00');
 	},
 	  function() {
- 	  	$('h3', this).fadeIn('slow').css('color', '#454545');  	
+ 	      $('h3', this).fadeIn('slow').css('color', '#454545');  	
 	}); // end essays hover
 
 
 	$('.essay-meta').click(function() { // essays accordion
-		$(this).next().toggle('fast');
-	    $.scrollTo($(this).next(), 1500, {offset:-50});
-		return false;
+	    $(this).next().toggle('fast');
+            $.scrollTo($(this).next(), 1500, {offset:-50});
+	    return false;
 	}).next().hide();
 
 
 	$('a.closer').click(function() { // close link. slides up to essays TOC
-		$(this).parent().slideUp(1000);
-		$.scrollTo('#essays', 1500);
+	    $(this).parent().slideUp(1000);
+	    $.scrollTo('#essays', 1500);
 	});
 
 });

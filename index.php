@@ -21,6 +21,7 @@
 
       query_posts('category_name=artists'); ?>
         <?php while (have_posts()) : the_post();  ?>
+         <?php $artist_cat = end(get_the_category($post->ID)); ?>
             <div class="section-wrap" id="artists-container">
                <div class="section-artists" id="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
                   <div class="meta-wrapper">
@@ -32,7 +33,7 @@
                   </div>
                <div class="artists-content">
                   <?php the_content(); ?>
-                  <?php the_tags(); ?>
+                  <?php the_meta(); ?>
                </div>
                </div>
             </div>
@@ -55,8 +56,8 @@
                </div>
                </div>
             </div>
-         <?php endwhile;
-      rewind_posts(); 
+         <?php endwhile; ?>
+      <?php rewind_posts(); 
 
 	  include('inc/events.php');
 
@@ -84,9 +85,7 @@
          while (have_posts()) : the_post();  ?>
             <div class="section-wrap">
                <div class="section blog">
-               <a href="<?php the_permalink(); ?>">
                <?php the_title('<h2 class="ital">', '</h2>'); ?>
-			   </a>
                <?php the_post_thumbnail(); ?>
                <?php the_content(); ?>
                <?php echo bloginfo('url') .'/#'. strtolower(str_replace(' ','', trim(get_the_title($post)))); /* the permalink */ ?> 
@@ -94,16 +93,19 @@
                <ul id="tag-list">
                <?php
                $last_tag = end(get_tags());
-			   foreach(get_tags() as $tag){
-			   			if ($tag == $last_tag) { 
-			   		 	echo '<li>' . $tag->name . '</li>';
-						} else {
-							echo '<li>' . $tag->name . ',</li>';
-						}
-			   		 }
-			   		 unset($tag);
-			   ?> 
-			   </ul>
+	       $artists = array('joel holmberg', 'seth price');
+               foreach(get_tags() as $tag){     
+               if (!in_array($tag->name, $artists)){
+               if ($tag == $last_tag) { 
+               echo '<li>' . $tag->name . '</li>';
+               } else {
+               echo '<li>' . $tag->name . ',</li>';
+               }
+               }
+	    }
+	    unset($tag);
+	   ?> 
+               </ul>
                </div>
             </div>
          <?php endwhile;
