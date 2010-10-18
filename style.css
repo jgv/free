@@ -97,6 +97,10 @@ ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 
 #blog ul li.blog-ul-separator { color: #333 }
 
+ul#tag-list ul { list-style-type: none; }
+
+ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a1; }
+
 #artists table { width: 100%!important; margin: 0 auto; display: block; }
 
 #artists td { margin: 0 6px; }

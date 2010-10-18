@@ -7,7 +7,7 @@
 						<li class="blog-ul-separator">/</li>
 						<li><a href="<?php bloginfo('rss2_url'); ?>">RSS</a></li>
 						<li class="blog-ul-separator">/</li>
-						<li><a href="mailto:<?php the_author_meta('user_email',1); ?>">email</li>
+						<li><a href="mailto:<?php the_author_meta('user_email',1); ?>">email</a></li>
 						<li class="blog-ul-separator">/</li>
 						<li>Tips</li>
 					</ul>

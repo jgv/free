@@ -10,7 +10,7 @@ $(document).ready(function() {
 	
 	},
 	  function() {
- 	  $(this).next().fadeIn().css('color', '#454545');  	
+ 	  $(this).next().fadeIn('slow').css('color', '#454545');  	
 	});
 
 	$('.essay-meta').click(function() { // essays accordion
