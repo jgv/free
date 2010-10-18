@@ -22,7 +22,7 @@ p { line-height: 22px!important; font-weight: lighter;}
 
 ul#nav-list { list-style-type: none; padding-left: 0px; margin: 0 0 40px 0; float: right; }
 
-ul#nav-list li { text-align: right; font-size: 72px; color: #454545; line-height: 82px }
+ul#nav-list li { text-align: right; font-size: 72px; color: #454545; line-height: 82px; cursor: pointer!important; }
 
 #nav p { text-transform: uppercase; color: #f00; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; text-align: right;}
 
@@ -32,13 +32,15 @@ ul#social li { display: inline; width:55px!important; }
 
 a, a:visited { text-decoration: none; color: #333; }
 
+a.closer { color: #f00; padding-top: 15px; }
+
 a:hover { text-decoration: none; color: #F00;}
 
 h1 { font-size: 72px; color: #454545; display: block; margin: 0 auto; }
 
 h1.section-title { height: 130px; }
 
-h1.section-title:after, /* ul#events-list:after */ { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
+h1.section-title:after /* ul#events-list:after */ { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
 
 h2 { font-size: 24px; color: #454545; font-weight: lighter; }
 

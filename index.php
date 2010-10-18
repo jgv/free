@@ -52,6 +52,7 @@
                </div>
                <div class="essay-content">
                <?php the_content(); ?>
+               <a href="#essay" class="closer">Close</a>
                </div>
                </div>
             </div>
