@@ -44,7 +44,7 @@
 
       query_posts('category_name=essays');
          while (have_posts()) : the_post();  ?>
-            <div class="section-wrap essays">
+            <div class="section-wrap essays" id="<?php the_author_meta(last_name); ?>">
                <div class="section">
                <div class="essay-meta">
                <h2 class="ital"><?php the_title(); ?></h2>
@@ -63,7 +63,7 @@
       query_posts('category_name=events');
          while (have_posts()) : the_post();  ?>
             <div class="section-wrap events">
-               <div class="section">
+               <div class="section events">
                <h2 class="ital"><?php the_title(); ?></h2>
                <h5>
                <?php echo get_post_meta( $post->ID, 'event_date', true ); ?>
