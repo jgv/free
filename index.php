@@ -32,6 +32,7 @@
                   </div>
                <div class="artists-content">
                   <?php the_content(); ?>
+                  <?php the_tags(); ?>
                </div>
                </div>
             </div>

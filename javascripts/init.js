@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	$(' div.meta-wrapper').click(function() { // artists accordion
 		$(this).next().toggle('slow');
-		$.scrollTo('div.artists-content', 1500, {offset:-50});
+	    $.scrollTo($(this).next(), 1500, {offset:-50});
 		return false;
 	}).next().hide();
 	
