@@ -93,7 +93,31 @@
                <ul id="tag-list">
                <?php
                $last_tag = end(get_tags());
-	       $artists = array('joel holmberg', 'seth price');
+               $artists = array('joel holmberg',
+                                'seth price', 
+                                'Liz Deschenes',
+                                'Andrea Longacre-White',
+                                'Trevor Paglen',
+                                'Aleksandra Domanovic',
+                                'Kristin Lucas',
+                                'Lizzie Fitch',
+                                'Jill Magid',
+                                'Jon Rafman',
+                                'Martijn Hendriks'
+                                'Hanne Mugaas',
+                                'Clunie Reid',
+                                'Takeshi Murata',
+                                'Amanda Ross-Ho',
+                                'David Horvitz',
+                                'Rashaad Newsome',
+                                'Alexandre Singh',
+                                'Lars Laumann',
+                                'Lisa Oppenheim',
+                                'Ryan Trecartin & David Karp'
+                                'Ryan Trecartin and David Karp',
+                                'Ryan Trecartin',
+                                'David Karp',
+                                'Harm Van Den Dorpel');
                foreach(get_tags() as $tag){     
                if (!in_array($tag->name, $artists)){
                if ($tag == $last_tag) { 
