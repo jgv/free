@@ -1,6 +1,6 @@
 <?php 
 	get_header();
-	get_sidebar(); 	
+	include('sidebar-single.php'); 	
 ?>
 
             <div class="section-wrap">
