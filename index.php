@@ -62,7 +62,7 @@
       query_posts('category_name=events');
          while (have_posts()) : the_post();  ?>
             <div class="section-wrap events">
-               <div class="section events">
+               <div class="section events" id ="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
                <?php the_title('<h2 class="ital">', '</h2>'); ?>
                <h5>
                <?php echo get_post_meta( $post->ID, 'event_date', true ); ?>

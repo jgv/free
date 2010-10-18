@@ -64,6 +64,8 @@ h5 { font-size: 16px; color: gray; text-align: center; margin: 20px auto; font-w
 .section-artists { width: 646px; border: 1px solid #d4d4d4; background-color: white; }
    .section-artists h2 { text-align: center; height: 60px; vertical-align: middle;  padding: 20px 0 0 0; }
    .section-artists h3 { text-align: center; padding: 0 0 20px 0;}
+   
+   .artists-content p { padding: 0 75px 20px;}
 
    .meta-wrapper { cursor: pointer!important; }
    
