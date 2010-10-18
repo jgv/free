@@ -78,7 +78,7 @@
          <?php endwhile;
       rewind_posts();
 
-	include('inc/blog.html');
+	include('inc/blog.php');
 
       query_posts('category_name=blog');
          while (have_posts()) : the_post();  ?>

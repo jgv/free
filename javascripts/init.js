@@ -4,14 +4,13 @@ $(document).ready(function() {
 		$(this).next().toggle('slow');
 		return false;
 	}).next().hide();
+	
 	$('.meta-wrapper img').hover(function() {  // hover stuff for artists accordion
-//	  $(this).next().fadeIn('slow').css('background-color', 'whiteSmoke');
-	  $('.meta h3').fadeIn('slow').css('color', '#f00');
+	  $(this).next().fadeIn('slow').css('color', '#f00');
 	
 	},
 	  function() {
-	  $(this).next().css('background-color', '#fff');	
- 	  $('.meta h3').fadeIn().css('color', '#454545');  	
+ 	  $(this).next().fadeIn().css('color', '#454545');  	
 	});
 
 	$('.essay-meta').click(function() { // essays accordion
