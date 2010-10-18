@@ -84,7 +84,10 @@
          while (have_posts()) : the_post();  ?>
             <div class="section-wrap" id>
                <div class="section">
+               <?php the_title(); ?>
+               <?php the_post_thumbnail(); ?>
                <?php the_content(); ?>
+               <?php echo bloginfo('url') .'/#'. strtolower(str_replace(' ','', trim(get_the_title($post)))); ?>
                </div>
             </div>
          <?php endwhile;
