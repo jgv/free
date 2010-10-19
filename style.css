@@ -18,7 +18,7 @@ p { line-height: 22px!important; font-weight: lighter;}
 
 #container { position: absolute; left: 50%; top: 0px; margin-left: -500px; }
 
-#nav { position: fixed; left: 50%; margin-left: -440px; top: 40%; margin-top: -150px; width: 200px; }
+#nav { position: fixed; left: 50%; margin-left: -490px; top: 20%; margin-top: -100px; width: 250px; }
 
 ul#nav-list { list-style-type: none; padding-left: 0px; margin: 0 0 40px 0; float: right; }
 
@@ -43,6 +43,8 @@ a:hover { text-decoration: none; color: #F00;}
 .left { float: left; }
 
 .clear { clear:both; }
+
+.red { color:#f00 }
 
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 
@@ -74,7 +76,7 @@ h5 { font-size: 16px; color: gray; text-align: center; margin: 20px auto; font-w
       .essay-meta h3 { padding-top: 10px }
 
 .section-artists { width: 646px; border: 1px solid #d4d4d4; background-color: white; }
-   .section-artists h2 { text-align: center; height: 60px; vertical-align: middle;  padding: 20px 0 0 0; }
+   .section-artists h2 { text-align: center; text-align: middle; padding: 20px 0 20px; }
    .section-artists h3 { text-align: center; padding: 0 0 20px 0;}
    
    .artists-content p { padding: 0 75px 20px;}
