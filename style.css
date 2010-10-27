@@ -10,9 +10,11 @@ Tags: free, new museum, contemporary art, catalog
 
 @import url("stylesheets/reset.css");
 
-html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #333333; background-color: #e8e8e8; }
+iframe { vertical-align: top; margin: 0; padding: 0; } /* like button */
 
-p { line-height: 22px!important; font-weight: lighter;}
+html, body { font-family: Georgia, Times, serif; font-size: 14px; color: #222; background-color: #e8e8e8; }
+
+p { line-height: 24px!important; font-weight: lighter;}
 
 #wrapper { width: 100%; background-color: #e8e8e8}
 
@@ -20,15 +22,17 @@ p { line-height: 22px!important; font-weight: lighter;}
 
 #nav { position: fixed; left: 50%; margin-left: -490px; top: 20%; margin-top: -100px; width: 250px; }
 
-ul#nav-list { list-style-type: none; padding-left: 0px; margin: 0 0 40px 0; float: right; }
+ul#nav-list { list-style-type: none; padding-left: 0px; margin: 10% 0 10% 0; float: right; }
 
 ul#nav-list li { text-align: right; font-size: 72px; color: #454545; line-height: 82px; cursor: pointer!important; }
 
-#nav p { text-transform: uppercase; color: #f00; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; text-align: right;}
+#nav p { text-transform: uppercase; color: #f00; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; text-align: right; }
 
-ul#social { list-style-type: none; margin: 15px 0 0 0; width:300px}
+ul#social { list-style-type: none; margin: 15px 0 0 0; width:300px; text-align: right;}
 
 ul#social li { display: inline; width:55px!important; }
+
+ul#social li.tweet { padding-right: 30px }
 
 a, a:visited { text-decoration: none; color: #333; }
 
@@ -42,6 +46,8 @@ a:hover { text-decoration: none; color: #F00;}
 
 .left { float: left; }
 
+.center { text-align: center; }
+
 .clear { clear:both; }
 
 .red { color:#f00 }
@@ -54,7 +60,7 @@ h1 { font-size: 72px; color: #454545; display: block; margin: 0 auto; }
 
 h1.section-title { height: 130px; }
 
-h1.section-title:after /* ul#events-list:after */ { content:url(images/divider.png); margin-bottom: 0 auto; display: block; position: absolute; left: 34% }
+h1.section-title:after { content:url(images/divider.png); margin-top: -70px; display: block; position: absolute; left: 34% }
 
 h2 { font-size: 24px; color: #454545; font-weight: lighter; }
 
@@ -64,17 +70,22 @@ h4 { font-size: 13px; color: #f00;}
 
 h5 { font-size: 16px; color: gray; text-align: center; margin: 20px auto; font-weight: lighter; font-weight: 200; }
 
+h6 { font-size: 10px; color: gray; text-align: center; margin: 10px auto; font-weight: lighter; font-weight: 200; text-transform: uppercase; text-decoration: underline; text-align: center}
+
 .section-wrap { width: 648px; background-color: white; box-shadow: 0 0 1em #888; -moz-box-shadow: 0 0 1em #888; -webkit-box-shadow: 0 0 1em #888; filter:progid:DXImageTransform.Microsoft.Blur(pixelradius=10); -ms-filter:"progid:DXImageTransform.Microsoft.Blur(pixelradius=10)"; left: 50%; margin: 20px 0 20px 320px ; padding: 4px; }
 
 .section { width: 496px; border: 1px solid #d4d4d4; padding: 10px 75px 10px; background-color: white; }
    .section h1, h2, h3 { text-align: center; }
-   .section p { color: #333333; font-size: 14px; line-height: 18px}
+   .section p { color: #222; font-size: 14px; line-height: 18px}
 
 
-   .essay-meta { min-height: 275px; cursor: pointer!important;}
-      .essay-meta h2 { padding-top: 100px}
+   .essay-meta { min-height: 210px; cursor: pointer!important;}
+      .essay-meta h2 { padding-top: 15%}
       .essay-meta h3 { padding-top: 10px }
 
+	
+		p.essay_break { margin: 15px auto; }
+		
 .section-artists { width: 646px; border: 1px solid #d4d4d4; background-color: white; }
    .section-artists h2 { text-align: center; text-align: middle; padding: 20px 0 20px; }
    .section-artists h3 { text-align: center; padding: 0 0 20px 0;}
@@ -83,27 +94,65 @@ h5 { font-size: 16px; color: gray; text-align: center; margin: 20px auto; font-w
 
    .meta-wrapper { cursor: pointer!important; }
    
-ul#events-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0; text-align: center;  }   
+   .meta-wrapper img { margin: 75px auto 15px; display: block;}
+   
+   .meta-wrapper img:hover { opacity: 0.95 }
+   
+img.closer { margin: 0 auto 20px; display: block; clear: both; cursor: pointer; }
 
-ul#events-list li { vertical-align: middle }
+img.closer:hover { opactiy: 0.5 }
+      
+ul#events-list:after { content:url(images/divider.png); padding-top: 10px; display: block; position: absolute; left: 34% }
+
+ul#events-list { list-style-type: none; margin: 0 auto 40px ; display: block; padding: 0 0 0; text-align: center;  }   
+
+ul#events-list li a { vertical-align: middle; color: #f00 }
+
+ul#events-list li a:hover { color: #454545; }
 
 ul#events-list li h4 { width: auto; display: inline;}
+
+div#events .events-section { padding: 10px 25px; width: 596px }
+
+p#artist-desc { margin-bottom: 10px }
 
 div.events h5 { margin-bottom: 60px; }
 
 div.events h5:after { content:url(images/divider.png); margin: 20px auto 20px; display: block; position: absolute; left: 34% }
 
+p#essays-desc { margin-top: 10px; }
+
+p#essays-desc a { color: #f00 }
+
 h3#essays-list-title { margin-top: 20px}
 
-ul#authors-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0 0; text-align: center;  }   
+ul#authors-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0 0; text-align: center; min-height: 40px; }   
 
 ul#authors-list li { display: inline; padding: 0 4px; }
 
-ul#authors-list:after { content:url(images/divider.png); margin: 10px auto; display: block; position: absolute; left: 34% }
+ul#authors-list:after { content:url(images/divider.png); margin: 20px auto; display: block; position: absolute; left: 34% }
 
 ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 
-ul#blog-list { width: 175px; margin: 0px auto; display: block; list-style-type: none; }
+#blog p#blog-desc { margin-bottom: 10px }
+
+div.section.blog h2 { margin: 15px auto 50px }
+
+div.section.blog h2:after { content:url(images/divider.png); margin: 0px auto; display: block; position: absolute; left: 34% }
+
+div.section.blog img { margin: 20px auto; display: block; }
+
+div.section.blog img.divider { margin-left: -75px; }
+
+p.external { text-align: right; }
+
+p.external a { color: #f00; }
+
+p.external a:hover { color: #222; }
+
+ul#blog-list { width: 110px; margin: 0px auto; display: block; list-style-type: none; min-height: 60px; }
+
+ul#blog-list:after { content:url(images/divider.png); margin: 10px auto; display: block; position: absolute; left: 34% }
 
 ul#blog-list li { display: inline; width: 40px; padding: 0 4px; font-size: 14px; text-transform: uppercase;}
 
@@ -115,7 +164,7 @@ ul#blog-list li.blog-ul-separator { color: #333 }
 
 h3#tags { padding-top: 20px; }
 
-h3#tags:before { content:url(images/divider.png); margin: -10px auto 50px; display: block; position: absolute; left: 34% }
+h3#tags:before { content:url(images/divider.png); margin: -20px auto 50px; display: block; position: absolute; left: 34% }
 
 ul#tag-list ul { list-style-type: none; }
 
@@ -123,7 +172,9 @@ ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a
 
 div.blog img { margin: 20px auto;}
 
-ul#artists-list { list-style-type:none }
+ul#artists-list { list-style-type:none; height:150px; padding-top: 4px}
+
+ul#artists-list:after { content:url(images/divider.png); padding-top: 10px; display: block; position: absolute; left: 34% }
 
 ul#artists-list li { display: inline; }
 

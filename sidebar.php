@@ -7,9 +7,8 @@
       <li><a href="#credits">Credits</a></li>
       <li><a href="#blog">Blog</a></li>
    </ul>
-   <p>oct. 19 &ndash; jan. 8<br />at the new museum<br /></p>
+
    <ul id="social">
-   <li><?php include('inc/facebook.html'); ?></li>
-   <li><?php include('inc/twitter.html'); ?></li>
+   <li class="tweet"><?php include('inc/facebook.html'); ?></li>
    </ul>
 </div>
