@@ -1,2 +1,1 @@
-<?php // header('Location:'. bloginfo("url") .'' ?>
-<?php echo '404'; ?>
+<?php  header('Location:'. bloginfo("url") . '' ?>
