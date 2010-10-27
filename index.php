@@ -36,26 +36,35 @@ get_sidebar();
       
       <?php
 	//for use in the loop, list 5 post titles related to first tag on current post
-      $tags = wp_get_post_tags($post->ID);
-                    if ($tags) {
-                      $first_tag = $tags[0]->term_id;
-                      $args=array(
-                                  'tag__in' => array($first_tag),
-                                  'post__not_in' => array($post->ID),
+
+	$tags = wp_get_post_tags($post->ID);
+	$first_tag = $tags[0]->term_id;
+
+//                      $first_tag = get_the_title();
+
+		      $id = get_the_id();
+
+                    $args=array(
+                                  'tag__in' => $first_tag,
+                                  'post__not_in' => array($id),
+				  'category_name' => 'blog',
                                   'showposts'=>5,
                                   'caller_get_posts'=>1
                                   );
+//		      $query = "tag=" . get_the_title() . "&showposts=4";
+//		      echo $query;
                       $my_query = new WP_Query($args);
                       if( $my_query->have_posts() ) {
 			echo '<h3 class="red">External Links</h3>';
       while ($my_query->have_posts()) : $my_query->the_post(); ?>
       <?php if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
-      <p class="external"><a href="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>" title="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>"><?php the_title(); ?> &raquo;</a></p>
-      <?php }
+      <p class="artist-external"><a href="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>" title="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>"><?php the_title(); ?></a></p>
+      <?php } ?>
 
-        endwhile;
+  <?php      endwhile;
 		      }
-                    } 
+
+
       ?>      
       <img class="closer" src="<?php bloginfo('template_url') ?>/images/close.png" alt="Close">
     </div>
@@ -95,9 +104,9 @@ get_sidebar();
 <div class="section-wrap events">
   <div class="section events" id ="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
   <?php if (get_post_meta( $post->ID, 'event_link', true ) != NULL ) { ?>
-  <a href="<?php echo get_post_meta( $post->ID, 'event_link', true ); ?>" class="events-link" title="<?php the_title() ?>" alt="<?php the_title()?>"><?php the_title('<h2 class="ital">', '</h2>'); ?></a>
+  <h2 class="ital"><a href="<?php echo get_post_meta( $post->ID, 'event_link', true ); ?>" class="events-link" title="<?php the_title() ?>" alt="<?php the_title()?>"><?php the_title(); ?></a></h2>
   <?php } else { ?>
-  <?php the_title('<h2 class="ital">', '</h2>'); ?>
+  <h2 class="ital"><?php the_title(); ?></h2>
   <?php } ?>
   <h5>
     <?php echo get_post_meta( $post->ID, 'event_date', true ); ?>
@@ -125,7 +134,7 @@ get_sidebar();
 
 <?php include('inc/blog.php'); ?>
 
-<?php query_posts('category_name=blog&offset=0&numberposts=-1'); ?>
+<?php query_posts('category_name=blog&numberposts=-1'); ?>
 <?php while (have_posts()) : the_post();  ?>
 <div class="section-wrap blog-wrap" id="post-<?php the_id() ?>">
   <div class="section blog">
@@ -133,32 +142,29 @@ get_sidebar();
     <?php the_post_thumbnail(); ?>
     <?php the_content(); ?>
     <img class="divider" src="<?php bloginfo('template_url'); ?>/images/divider.png">
-    <?php if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
+    <?php 
+
+    $posttags = get_the_tags();     
+    if ( $posttags ) {
+      echo ' <h3 id="tags">Tags</h3>';
+      echo '<ul id="tag-list">';
+      $last_tag = end($posttags);
+      foreach($posttags as $tag){     
+	if ($tag == $last_tag) { 
+	  echo '<li>' . $tag->name . '</li>';
+	  } else {
+	    echo '<li>' . $tag->name . ',</li>';
+	  }
+	}
+	unset($tag);
+    echo '</ul>';
+    }
+    ?>
+  
+  <?php if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
     <p class="external"><a href="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>" title="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>">LINK &raquo;</a></p>
     <?php } ?>
-    <?php /* bloginfo('url') .'/#'. strtolower(str_replace(' ','', trim(get_the_title($post))));  the permalink */ ?> 
-    <?php /*
-      echo '<h3 id="tags">Tags</h3>';
-      
-      echo '<ul id="tag-list">';
-       
-      if ( get_tags() != NULL) {
-        $last_tag = end(get_tags());
-	foreach(get_tags() as $tag){     
-	  if ($tag == $last_tag) { 
-	    echo '<li>' . $tag->name . '</li>';
-	    } else {
-	      echo '<li>' . $tag->name . ',</li>';
-	    }
-	  }
-	  unset($tag);
-	}
-     
-    echo '</ul>';
-    */ 
-    ?>
-    
-    
+
   </div>
 </div>
 <?php endwhile; ?>

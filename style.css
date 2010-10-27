@@ -122,6 +122,8 @@ p#artist-desc { margin-bottom: 10px }
 
 div.events h5 { margin-bottom: 60px; }
 
+div.events h2 a:hover { color: #454545 }
+
 div.events h5:after { content:url(images/divider.png); margin: 20px auto 20px; display: block; position: absolute; left: 34% }
 
 p#essays-desc { margin-top: 10px; }
@@ -172,13 +174,15 @@ ul#blog-list li.blog-ul-separator { color: #333 }
 
 h3#tags { padding-top: 20px; }
 
-h3#tags:before { content:url(images/divider.png); margin: -20px auto 50px; display: block; position: absolute; left: 34% }
+//h3#tags:before { content:url(images/divider.png); margin: -20px auto 50px; display: block; position: absolute; left: 34% }
 
 ul#tag-list ul { list-style-type: none; }
 
 ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a1; }
 
 div.blog img { margin: 20px auto;}
+
+p.artist-external:after { content:url(images/external.jpg); margin-left: 8px;  }
 
 ul#artists-list { list-style-type:none; height:150px; padding-top: 4px}
 
