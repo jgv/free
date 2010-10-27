@@ -1,0 +1,10 @@
+h1. Free
+
+This website was developed as the online catalog to accompany "Free" at the New Museum (10-20-10 to 1-23-11). Free was curated by Lauren Cornell, Executive Director of "Rhizome":http://rhizome.org and Adjunct Curator at New Museum. The catalog was designed by "John Michael Boling":http://johnmichaelboling.com, Rhizome's Associate Director and is maintained by Ceci Moss, Rhizome's Editor. 
+
+Free runs on WordPress 3. 
+
+h3. Installed Plugins
+
+# PostMash
+# WP Super Cache 
