@@ -7,6 +7,9 @@ $(document).ready(function() {
     $.localScroll({ offset: {top:-20}, hash: true}); //scrollto
     
     $('div.meta-wrapper').click(function() { // artists accordion
+	//var NewLink = $(this).attr("link");
+//	alert($(this).children('.meta').text());
+	//window.location.href = $(this).next();
 	$(this).next().slideDown().toggle();
 	return true;
     }).next().hide();
@@ -39,24 +42,19 @@ $(document).ready(function() {
     });    
     
     $(function() {
-	$("h2.clipboard").each(function() {
+	$(".clipboard").each(function() {
             //Create a new clipboard client
             var clip = new ZeroClipboard.Client();
 	    
-            //Cache the last td and the parent row    
 	    var title = $(this);
-	    // var parentRow = lastTd.parent("tr");
-	    
-            //Glue the clipboard client to the last td in each row
+	              
             clip.glue(title[0]);
-	    
-            //Grab the text from the parent row of the icon
+	              
             var txt = $(this).attr('title');
             clip.setText(txt);
-	    
-            //Add a complete event to let the user know the text was copied
+	              
             clip.addEventListener('complete', function(client, text) {	    
-
+		//Add a complete event to let the user know the text was copied
             });
 	    
 	    clip.addEventListener('onMouseOver', function () {
