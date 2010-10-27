@@ -15,13 +15,15 @@
   <!--[if lt IE 8]>
       <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/ie.css" />
   <![endif]--> 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery.scrollTo-1.4.2-min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery.localscroll-min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/ZeroClipboard.js"></script> 
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/init.js"></script>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <?php wp_head();?>
+
 </head>
 
 <body>

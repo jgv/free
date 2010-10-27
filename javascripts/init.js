@@ -8,76 +8,59 @@ $(document).ready(function() {
     
     $('div.meta-wrapper').click(function() { // artists accordion
 	$(this).next().slideDown().toggle();
-//	$.scrollTo($(this).next(), 1500, {offset:-50});
 	return true;
     }).next().hide();
     
-    $('.meta-wrapper img').hover(function() {  // begin hover stuff for artists accordion
-	$(this).next().fadeIn('slow').css('color', '#f00');
-	
-    },
-	                         function() {
- 	                             $(this).next().fadeIn('slow').css('color', '#454545');  	
-	                         }); // end hover stuff for artists accordion
+    $('.meta-wrapper img').hover(function() {  // hover stuff for artists accordion
+	$(this).next().fadeIn('slow').css('color', '#f00');	
+    }, function() {
+ 	$(this).next().fadeIn('slow').css('color', '#454545');  	
+    }); 
     
     $('.essay-meta').hover(function() { // essays hover
 	$('h3', this).fadeIn('slow').css('color', '#f00');
-    },
-	                   function() {
- 	                       $('h3', this).fadeIn('slow').css('color', '#454545');  	
-	                   }); // end essays hover
+    }, function() {
+ 	$('h3', this).fadeIn('slow').css('color', '#454545');  	
+    });
     
-    
-
-
     $('.essay-meta').click(function() { // essays accordion
 	$(this).next().slideDown().toggle();
-       // $.scrollTo($(this).next(), 1500, {offset:-50});
 	return false;
     }).next().show(); // this allows for the essay to close, although will initially show it open
-
     
-    
-    $('div.essays img.closer').click(function() { // close link. slides up to essays TOC
+    $('div.essays img.closer').click(function() { // closer link, specific to the essays. note that the difference betweeen this function and the one below it is the offset
 	$(this).parent().slideUp(1000);
-	//console.log($(this).parent());
 	$.scrollTo($(this).parent(), 500, {offset:-300});
     });
-
-    $('div.artists-content img.closer').click(function() { // close link. slides up to essays TOC
-	$(this).parent().slideUp(1000);
-	console.log($(this).parent());
-	$.scrollTo($(this).parent(), 500, {offset:-100});
-    });
-
- 
-    // infinitescroll() is called on the element that surrounds 
-    // the items you will be loading more of
-   $('#container').infinitescroll({
-        debug : 'true',
-        navSelector  : "div.navigation",            
-        // selector for the paged navigation (it will be hidden)
-        nextSelector : "div.navigation a:first",    
-        // selector for the NEXT link (to page 2)
-        itemSelector : ".blog-wrap"          
-        // selector for all items you'll retrieve
-    });
-/*
-
-    var offset = 5;
-
-    $("#container").load("/?page_id=151&offset="+offset);
-    $("#another").click(function(){
-        
-        offset = offset+5;
     
-        $("#containerr")
-            .slideUp()
-            .load("/?page_id=151&offset="+offset, function() {
-                $(this).slideDown();
-            });
-            
-        return false;
+    $('div.artists-content img.closer').click(function() { // closer link for artists section
+	$(this).parent().slideUp(1000);
+	$.scrollTo($(this).parent(), 500, {offset:-100});
+    });    
+
+$(function() {
+    $("p.clipboard").each(function() {
+        //Create a new clipboard client
+        var clip = new ZeroClipboard.Client();
+	
+        //Cache the last td and the parent row    
+	var p = $(this);
+	// var parentRow = lastTd.parent("tr");
+	
+        //Glue the clipboard client to the last td in each row
+        clip.glue(p[0]);
+	
+        //Grab the text from the parent row of the icon
+        var txt = $(this).attr('title');
+        clip.setText(txt);
+	
+        //Add a complete event to let the user know the text was copied
+        clip.addEventListener('complete', function(client, text) {
+            alert("Copied text to clipboard:\n" + text);
+                });
     });
-*/
+
 });
+    
+});
+

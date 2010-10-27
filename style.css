@@ -40,6 +40,8 @@ a.closer { color: #f00; padding-top: 15px; }
 
 a:hover { text-decoration: none; color: #F00;}
 
+a:focus { outline:none; }
+
 .ital { font-style: italic; }
 
 .right { float: right; }

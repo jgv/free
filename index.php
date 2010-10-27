@@ -122,11 +122,12 @@ get_sidebar();
 
 <?php include('inc/blog.php'); ?>
 
-<?php query_posts('category_name=blog&offset=0&posts_per_page=5'); ?>
+<?php query_posts('category_name=blog&offset=0&posts_per_page=15'); ?>
 <?php while (have_posts()) : the_post();  ?>
-<div class="section-wrap blog-wrap">
+<div class="section-wrap blog-wrap" id="post-<?php the_id() ?>">
   <div class="section blog">
     <?php the_title('<h2 class="ital">', '</h2>'); ?>
+    <p class="clipboard" title="<?php bloginfo('url') ?>/#post-<? the_id() ?>">Copy Permalink to Clipboard</p>
     <?php the_post_thumbnail(); ?>
     <?php the_content(); ?>
     <img class="divider" src="<?php bloginfo('template_url'); ?>/images/divider.png">
