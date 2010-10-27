@@ -23,7 +23,6 @@
   <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/init.js"></script>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <?php wp_head();?>
-
 </head>
 
 <body>

@@ -37,30 +37,41 @@ $(document).ready(function() {
 	$(this).parent().slideUp(1000);
 	$.scrollTo($(this).parent(), 500, {offset:-100});
     });    
-
-$(function() {
-    $("p.clipboard").each(function() {
-        //Create a new clipboard client
-        var clip = new ZeroClipboard.Client();
-	
-        //Cache the last td and the parent row    
-	var p = $(this);
-	// var parentRow = lastTd.parent("tr");
-	
-        //Glue the clipboard client to the last td in each row
-        clip.glue(p[0]);
-	
-        //Grab the text from the parent row of the icon
-        var txt = $(this).attr('title');
-        clip.setText(txt);
-	
-        //Add a complete event to let the user know the text was copied
-        clip.addEventListener('complete', function(client, text) {
-            alert("Copied text to clipboard:\n" + text);
-                });
-    });
-
-});
     
-});
+    $(function() {
+	$("h2.clipboard").each(function() {
+            //Create a new clipboard client
+            var clip = new ZeroClipboard.Client();
+	    
+            //Cache the last td and the parent row    
+	    var title = $(this);
+	    // var parentRow = lastTd.parent("tr");
+	    
+            //Glue the clipboard client to the last td in each row
+            clip.glue(title[0]);
+	    
+            //Grab the text from the parent row of the icon
+            var txt = $(this).attr('title');
+            clip.setText(txt);
+	    
+            //Add a complete event to let the user know the text was copied
+            clip.addEventListener('complete', function(client, text) {	    
 
+            });
+	    
+	    clip.addEventListener('onMouseOver', function () {
+		$('li#clipboard-alert').html('Copy to clipboard?').fadeIn('slow');	
+	    });
+	    
+	    clip.addEventListener('onMouseOut', function() {
+		$('li#clipboard-alert').fadeOut('fast');	
+	    });
+
+	    clip.addEventListener('onMouseDown', function() {
+		$('li#clipboard-alert').css('display', 'none');
+		$('li#clipboard-alert').fadeIn('slow').html('Permalink copied to clipboard.').delay(800).fadeOut('slow');
+	    });
+
+	});
+    });
+});

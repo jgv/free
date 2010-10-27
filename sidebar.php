@@ -9,6 +9,7 @@
    </ul>
 
    <ul id="social">
-   <li class="tweet"><?php include('inc/facebook.html'); ?></li>
+   <li id="like-button"><?php include('inc/facebook.html'); ?></li>
+   <li id="clipboard-alert">Permalink copied to clipboard.</li>
    </ul>
 </div>

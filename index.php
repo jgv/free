@@ -126,8 +126,7 @@ get_sidebar();
 <?php while (have_posts()) : the_post();  ?>
 <div class="section-wrap blog-wrap" id="post-<?php the_id() ?>">
   <div class="section blog">
-    <?php the_title('<h2 class="ital">', '</h2>'); ?>
-    <p class="clipboard" title="<?php bloginfo('url') ?>/#post-<? the_id() ?>">Copy Permalink to Clipboard</p>
+      <h2 class="ital clipboard" title="<?php bloginfo('url') ?>/#post-<? the_id() ?>"><?php the_title(); ?></h2>
     <?php the_post_thumbnail(); ?>
     <?php the_content(); ?>
     <img class="divider" src="<?php bloginfo('template_url'); ?>/images/divider.png">

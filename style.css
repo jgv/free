@@ -30,9 +30,11 @@ ul#nav-list li { text-align: right; font-size: 72px; color: #454545; line-height
 
 ul#social { list-style-type: none; margin: 15px 0 0 0; width:300px; text-align: right;}
 
-ul#social li { display: inline; width:55px!important; }
+ul#social li { display: inline; }
 
-ul#social li.tweet { padding-right: 30px }
+ul#social li#like-button { padding-right: 30px }
+
+ul#social li#clipboard-alert { display:none; padding-right:50px; color: #f00; margin-top:20px }
 
 a, a:visited { text-decoration: none; color: #333; }
 
@@ -139,6 +141,10 @@ ul#authors-list li a { font-size: 14px; color: #cc0000; font-style: italic; }
 #blog p#blog-desc { margin-bottom: 10px }
 
 div.section.blog h2 { margin: 15px auto 50px }
+
+div.section.blog h2:hover { margin: 15px auto 50px;  }
+
+h2.hover { color: #f00; }
 
 div.section.blog h2:after { content:url(images/divider.png); margin: 0px auto; display: block; position: absolute; left: 34% }
 
