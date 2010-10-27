@@ -47,7 +47,7 @@ $(document).ready(function() {
     });    
     
     $(function() {
-	$(".clipboard").each(function() {
+	$("h2.clipboard").each(function() {
             //Create a new clipboard client
             var clip = new ZeroClipboard.Client();
 	    
@@ -77,4 +77,38 @@ $(document).ready(function() {
 
 	});
     });
+
+    $(function() { // there might be a better way to do this... have to duplicate this for the permalinks in essays since they're an h6 not an h2
+	$("h6.clipboard").each(function() {
+            //Create a new clipboard client
+            var clip = new ZeroClipboard.Client();
+	    
+	    var title = $(this);
+	              
+            clip.glue(title[0]);
+	              
+            var txt = $(this).attr('title');
+            clip.setText(txt);
+	              
+            clip.addEventListener('complete', function(client, text) {	    
+		//Add a complete event to let the user know the text was copied
+            });
+	    
+	    clip.addEventListener('onMouseOver', function () {
+		$('li#clipboard-alert').html('Copy to clipboard?').fadeIn('slow');	
+	    });
+	    
+	    clip.addEventListener('onMouseOut', function() {
+		$('li#clipboard-alert').fadeOut('fast');	
+	    });
+
+	    clip.addEventListener('onMouseDown', function() {
+		$('li#clipboard-alert').css('display', 'none');
+		$('li#clipboard-alert').fadeIn('slow').html('Permalink copied to clipboard.').delay(800).fadeOut('slow');
+	    });
+
+	});
+    });
+
+
 });
