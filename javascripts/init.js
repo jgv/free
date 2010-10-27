@@ -7,9 +7,10 @@ $(document).ready(function() {
     $.localScroll({ offset: {top:-20}, hash: true}); //scrollto
     
     $('div.meta-wrapper').click(function() { // artists accordion
-	//var NewLink = $(this).attr("link");
-//	alert($(this).children('.meta').text());
-	//window.location.href = $(this).next();
+	var scrollmem = $('body').scrollTop()
+	title = $(this).children('.meta').find('h3').text().replace(/ /g,'').toLowerCase();
+	window.location.hash = '#' + title;
+	$('html,body').scrollTop(scrollmem)
 	$(this).next().slideDown().toggle();
 	return true;
     }).next().hide();
