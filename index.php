@@ -69,12 +69,14 @@ get_sidebar();
 
 <?php query_posts('category_name=essays'); ?>
 <?php while (have_posts()) : the_post();  ?>
-<div class="section-wrap essays" id="<?php the_author_meta('last_name'); ?>">
+<?php $perma = strtolower(get_the_author()); ?>
+<?php $permalink = preg_replace('/\s+/', '', $perma);?>
+<div class="section-wrap essays" id="<?php echo $permalink; ?>">
   <div class="section"> 
     <div class="essay-meta">
       <?php the_title("<h2 class='ital', </h2>"); ?>
       <h3><?php the_author(); ?></h3>
-      <h6 class="clipboard" title="<?php bloginfo('url') ?>/#<?php the_author_meta('last_name'); ?>">Permalink</h6>
+      <h6 class="clipboard" title="<?php bloginfo('url') ?>/#<?php echo $permalink; ?>">Permalink</h6>
     </div>
     <div class="essay-content">
       <?php the_content(); ?>

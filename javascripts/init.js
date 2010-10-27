@@ -28,6 +28,10 @@ $(document).ready(function() {
     });
     
     $('.essay-meta').click(function() { // essays accordion
+	var scrollmem = $('body').scrollTop()
+	title = $(this).children('h3').text().replace(/ /g,'').toLowerCase();
+	window.location.hash = '#' + title;
+	$('html,body').scrollTop(scrollmem)
 	$(this).next().slideDown().toggle();
 	return false;
     }).next().show(); // this allows for the essay to close, although will initially show it open
