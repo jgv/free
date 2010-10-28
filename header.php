@@ -8,6 +8,14 @@
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <meta name="Keywords" content="New Museum, free, free new museum, lauren cornell, ceci moss, Brian Droitcour, Caterina Fake, Ed Halter, Joanne McNeil, Jonathan Vingiano, John Michael Boling, Liz Deschenes, Aleksandra Domanovic, Lizzie Fitch, Martijn Hendriks, Joel Holmberg, David Horvitz, Lars Laumann, Andrea Longacre-White, Kristin Lucas, Jill Magid, Takeshi Murata, Hanne Mugaas, Rashaad Newsome, Lisa Oppenheim, Trevor Paglen, Seth Price, Ryan Trecartin and David Karp, Jon Rafman, Clunie Reid, Amanda Ross-Ho, Alexandre Singh, Harm van den Dorpel " /> 
+  <meta name="Description" content="Online catalof for 'Free' at the New Museum. Curated by Lauren Cornell." /> 
+  <meta name="abstract" content="Online catalog for 'Free' at the New Museum." /> 
+  <meta http-equiv="Content-Language" content="EN" /> 
+  <meta name="author" content="Jonathan Vingiano, New Museum" /> 
+  <meta name="distribution" content="Global" /> 
+  <meta name="revisit-after" content="2 days" /> 
+  <meta name="robots" content="FOLLOW,INDEX, NOODP" /> 
   <link rel="shortcut icon" href="/assets/images/general/favicon.ico" > 
   <title><?php bloginfo( 'name' );?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11" />
