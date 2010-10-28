@@ -7,12 +7,16 @@ $(document).ready(function() {
     $.localScroll({ offset: {top:-20}, hash: true}); //scrollto
     
     $('div.meta-wrapper').click(function() { // artists accordion
-	var scrollmem = $('body').scrollTop()
-	title = $(this).children('.meta').find('h3').text().replace(/ /g,'').toLowerCase();
-	window.location.hash = '#' + title;
-	$('html,body').scrollTop(scrollmem)
-	$(this).next().slideDown().toggle();
-	return true;
+	  if (navigator.userAgent.match(/Firefox/)) {
+	  $(this).next().slideDown().toggle();
+	  } else {
+	  var scrollmem = $('body').scrollTop();
+	  title = $(this).children('.meta').find('h3').text().replace(/ /g,'').toLowerCase();
+	  window.location.hash = '#' + title;
+	  $('html,body').scrollTop(scrollmem);
+	  $(this).next().slideDown().toggle();
+	  }
+	  return true;
     }).next().hide();
     
     $('.meta-wrapper img').hover(function() {  // hover stuff for artists accordion
@@ -28,11 +32,15 @@ $(document).ready(function() {
     });
     
     $('.essay-meta').click(function() { // essays accordion
-	var scrollmem = $('body').scrollTop()
+	  if (navigator.userAgent.match(/Firefox/)) {
+	$(this).next().slideDown().toggle();
+	} else {
+	var scrollmem = $('body').scrollTop();
 	title = $(this).children('h3').text().replace(/ /g,'').toLowerCase();
 	window.location.hash = '#' + title;
-	$('html,body').scrollTop(scrollmem)
+	$('html,body').scrollTop(scrollmem);
 	$(this).next().slideDown().toggle();
+   }
 	return false;
     }).next().show(); // this allows for the essay to close, although will initially show it open
     
@@ -79,12 +87,12 @@ $(document).ready(function() {
     });
 
     $(function() { // there might be a better way to do this... have to duplicate this for the permalinks in essays since they're an h6 not an h2
-	$("h6.clipboard").each(function() {
-            //Create a new clipboard client
-            var clip = new ZeroClipboard.Client();
+	     $("h6.clipboard").each(function() {
+             //Create a new clipboard client
+        var clip = new ZeroClipboard.Client();
 	    
-	    var title = $(this);
-	              
+	     var title = $(this);
+	               
             clip.glue(title[0]);
 	              
             var txt = $(this).attr('title');

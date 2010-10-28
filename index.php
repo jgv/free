@@ -49,7 +49,7 @@ get_sidebar();
 <div class="section-wrap essays" id="<?php echo $permalink; ?>">
   <div class="section"> 
     <div class="essay-meta">
-      <?php the_title("<h2 class='ital', </h2>"); ?>
+      <?php the_title("<h2 class='ital'", "</h2>"); ?>
       <h3><?php the_author(); ?></h3>
       <h6 class="clipboard" title="<?php bloginfo('url') ?>/#<?php echo $permalink; ?>">Permalink</h6>
     </div>
