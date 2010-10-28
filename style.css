@@ -135,6 +135,8 @@ p#essays-desc a { color: #f00 }
 
 h3#essays-list-title { margin-top: 20px}
 
+img.clipboard { margin: 20px auto 0; display: block; }
+
 ul#authors-list { list-style-type: none; margin: 0 auto 20px ; display: block; padding: 0 0 0 0; text-align: center; min-height: 40px; }   
 
 ul#authors-list li { display: inline; padding: 0 4px; }

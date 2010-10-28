@@ -87,7 +87,7 @@ $(document).ready(function() {
     });
 
     $(function() { // there might be a better way to do this... have to duplicate this for the permalinks in essays since they're an h6 not an h2
-	     $("h6.clipboard").each(function() {
+	     $("img.clipboard").each(function() {
              //Create a new clipboard client
         var clip = new ZeroClipboard.Client();
 	    
