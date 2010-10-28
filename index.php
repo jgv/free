@@ -32,8 +32,9 @@ get_sidebar();
     </div>
     <div class="artists-content">
       <?php the_content(); ?>      
-      <?php
-      //for use in the loop, list 5 post titles related to first tag on current post
+
+	<?php /*
+	  //for use in the loop, list 5 post titles related to first tag on current post
       $tags = wp_get_post_tags($post->ID);
       $first_tag = $tags[0]->term_id;
       $id = get_the_id();
@@ -46,7 +47,7 @@ get_sidebar();
                  );
       $my_query = new WP_Query($args);
       if( $my_query->have_posts() ) {
-	echo '<div class="external-wrap">';
+      	echo '<div class="external-wrap">';
 	echo '<h3 class="red">External Links</h3>';
         while ($my_query->have_posts()) : $my_query->the_post(); 
           if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
@@ -54,8 +55,9 @@ get_sidebar();
       <?php } 
 	endwhile;
 	echo '</div>';
-      } ?>      
+      } */?>      
       <img class="closer" src="<?php bloginfo('template_url') ?>/images/close.png" alt="Close">
+
     </div>
   </div>
 </div>
