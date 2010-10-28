@@ -23,7 +23,7 @@ get_sidebar();
 <?php while (have_posts()) : the_post(); ?>
 <div class="section-wrap" id="artists-container">
   <div class="section-artists" id="<?php echo strtolower(str_replace(' ','', trim(get_the_title($post))));?>">
-  <div class="meta-wrapper">
+    <div class="meta-wrapper">
       <?php the_post_thumbnail(array(646,auto)); ?>
       <div class="meta">
 	<h2 class="ital"><?php echo get_post_meta($post->ID, 'artwork_title', true)?></h2>
