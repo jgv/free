@@ -182,7 +182,11 @@ ul#tag-list li { display: inline; padding: 0 4px; font-size: 14px; color: #a1a1a
 
 div.blog img { margin: 20px auto;}
 
-p.artist-external:after { content:url(images/external.jpg); margin-left: 8px;  }
+p.artist-external:after { content:url(images/external.jpg); margin-left: 8px; }
+
+div.external-wrap { margin-bottom:60px }
+
+div.external-wrap:after{ content:url(images/divider.png); margin: 10px auto; display: block; position: absolute; left: 34% }
 
 ul#artists-list { list-style-type:none; height:150px; padding-top: 4px}
 

@@ -31,41 +31,30 @@ get_sidebar();
       </div>
     </div>
     <div class="artists-content">
-      <?php the_content(); ?>
-      
-      
+      <?php the_content(); ?>      
       <?php
-	//for use in the loop, list 5 post titles related to first tag on current post
-
-	$tags = wp_get_post_tags($post->ID);
-	$first_tag = $tags[0]->term_id;
-
-//                      $first_tag = get_the_title();
-
-		      $id = get_the_id();
-
-                    $args=array(
-                                  'tag__in' => $first_tag,
-                                  'post__not_in' => array($id),
-				  'category_name' => 'blog',
-                                  'showposts'=>5,
-                                  'caller_get_posts'=>1
-                                  );
-//		      $query = "tag=" . get_the_title() . "&showposts=4";
-//		      echo $query;
-                      $my_query = new WP_Query($args);
-                      if( $my_query->have_posts() ) {
-			echo '<h3 class="red">External Links</h3>';
-      while ($my_query->have_posts()) : $my_query->the_post(); ?>
-      <?php if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
+      //for use in the loop, list 5 post titles related to first tag on current post
+      $tags = wp_get_post_tags($post->ID);
+      $first_tag = $tags[0]->term_id;
+      $id = get_the_id();
+      $args=array(
+                  'tag__in' => $first_tag,
+                  'post__not_in' => array($id),
+		  'category_name' => 'blog',
+                  'showposts'=>5,
+                  'caller_get_posts'=>1
+                 );
+      $my_query = new WP_Query($args);
+      if( $my_query->have_posts() ) {
+	echo '<div class="external-wrap">';
+	echo '<h3 class="red">External Links</h3>';
+        while ($my_query->have_posts()) : $my_query->the_post(); 
+          if (get_post_meta( $post->ID, 'blog_external_link', true ) != NULL) { ?>
       <p class="artist-external"><a href="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>" title="<?php echo get_post_meta( $post->ID, 'blog_external_link', true ); ?>"><?php the_title(); ?></a></p>
-      <?php } ?>
-
-  <?php      endwhile;
-		      }
-
-
-      ?>      
+      <?php } 
+	endwhile;
+	echo '</div>';
+      } ?>      
       <img class="closer" src="<?php bloginfo('template_url') ?>/images/close.png" alt="Close">
     </div>
   </div>
