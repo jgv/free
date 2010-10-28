@@ -1,11 +1,18 @@
 // Simple Set Clipboard System
 // Author: Joseph Huckaby
 
+
+if ( location.host != 'localhost:8888' ) {
+    swfLocation = 'http://' + location.host + '/free/wp-content/themes/free/swf/ZeroClipboard.swf';
+} else {
+    swfLocation = 'http://' + location.host + '/wp-content/themes/free/swf/ZeroClipboard.swf';
+}
+
 var ZeroClipboard = {
 	
 	version: "1.0.4",
 	clients: {}, // registered upload clients on page, indexed by id
-	moviePath: 'http://' + location.host + '/wp-content/themes/free/swf/ZeroClipboard.swf', // URL to movie
+	moviePath: swfLocation, // URL to movie
 	nextId: 1, // ID of next movie
 	
 	$: function(thingy) {

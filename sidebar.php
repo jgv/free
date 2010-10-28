@@ -10,6 +10,6 @@
 
    <ul id="social">
    <li id="like-button"><?php include('inc/facebook.html'); ?></li>
-   <li id="clipboard-alert">Permalink copied to clipboard.</li>
+   <li id="clipboard-alert"></li>
    </ul>
 </div>
