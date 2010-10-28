@@ -9,18 +9,18 @@
     <ul id="artists-list">
       <?php while (have_posts()) : the_post();  ?>
         <?php $counter++ ?>
-	  <?php if (!in_array(get_the_title(), $artist_array)) : ?>
+	  <?php if (!in_array(get_the_title(), $artist_array)): ?>
 	    <?php $artist_array[] = get_the_title(); ?>
-	    <?php if ($counter < $num_artists) : ?>
+	    <?php if ($counter < $num_artists): ?>
 	      <?php $slug = strtolower(str_replace(' ','', trim(get_the_title($post->ID)))); ?>
 	      <li><a href="#<?php echo $slug; ?>">
 	      <?php the_title(); ?></a>,</li>
-	    <?php else; ?>
+	    <?php else: ?>
 	    <?php $slug = strtolower(str_replace(' ','', trim(get_the_title($post->ID)))); ?>
 	    <li><a href="#<?php echo $slug; ?>">
 	    <?php the_title(); ?></a></li>
+	    <?php endif; ?>
 	  <?php endif; ?>
-	<?php endif; ?>
       <?php endwhile; ?>
     </ul>
   </div>
